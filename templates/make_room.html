@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Make Room
+{% endblock %}
+
+{% block main %}
+    <form action="/make_room" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="room_id" name="room_id" placeholder="Room Id" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="room_password" name="room_password" placeholder="Room Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Make Room</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+     Goal
+{% endblock %}
+
+{% block main %}
+    {% if session["goal"] == "available" %}
+        <div>
+            {{ goal }}
+        </div>
+        <form action="/delete_goal" method="post">
+            <input name="goal_id" type="hidden" value="{{ id }}">
+            <button class="btn btn-primary" type="submit">Delete Goal</button>
+        </form>
+    {% else %}
+    <form action="/goal" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="goal" name="goal" placeholder="Your Goal" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Room
+{% endblock %}
+
+{% block main %}
+    {% for goal in goals %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ goal }}</h5>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}
